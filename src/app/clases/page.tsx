@@ -2,12 +2,22 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Classes = () => {
   const classes = [
-    "Computer Science",
-    "Internet of Things",
-    "Embedded Sysytem",
+    {
+      name: "Computer Science",
+      url: "classes/cse",
+    },
+    {
+      name: "Internet of Things",
+      url: "classes/iot",
+    },
+    {
+      name: "Embedded Sysytem",
+      url: "classes/embd",
+    },
   ];
 
   const router = useRouter();
@@ -18,10 +28,17 @@ const Classes = () => {
         <h1 className="text-4xl text-center text-black font-extrabold mb-12">
           Your Classes
         </h1>
-        <div className="bg-gray-200 min-h-44 w-full rounded-lg grid place-content-center">
-          <p className="text-center text-black my-auto">
-            Sorry You dont have any clases !
-          </p>
+        <div className="bg-gray-200 min-h-96 w-full rounded-[3rem] grid place-content-center">
+          {classes?.map((e, index) => (
+            <Link href={e.url}>
+              <div
+                key={index}
+                className="p-6 px-24 font-extrabold text-white bg-gradient-to-br from-yellow-500 to-red-400 rounded-[3rem] my-4 text-center"
+              >
+                {e.name}
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
       <footer className="fixed bottom-10 right-10">
