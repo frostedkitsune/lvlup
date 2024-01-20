@@ -4,12 +4,15 @@ const supabase = createClient(process.env.SUPABASE_URL || "", process.env.SUPABA
 
 
 export default async function BOD() {
-    const { data, error:any } = await supabase
+    const { error:any } = await supabase
       .from('users_student')
-      .select()
+      .update({ name: "subhajit giri"})
+      .eq('id', 3)
+
     return (
-        <h1>result: <br />
-            { data?.map(e => <span>{e.name}<br /></span> ) }
+        <h1>result of : <br />
         </h1>
     );
+
+
 }
