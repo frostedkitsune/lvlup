@@ -28,7 +28,7 @@ const Signup = () => {
 
   return (
     <main>
-      <section className="bg-gray-50 dark:bg-gray-900 min-h-screen p-12">
+      <section className="bg-gray-50 dark:bg-gray-400 min-h-screen p-12">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
           <Link
             href="/"
