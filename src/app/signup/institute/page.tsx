@@ -3,10 +3,9 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Signup = () => {
+const InstituteSignup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [roll, setRoll] = useState("");
   const [uuid, setUuid] = useState("");
   const [pswd, setPswd] = useState("");
   const [c_pswd, setCpswd] = useState("");
@@ -19,7 +18,6 @@ const Signup = () => {
     const data = {
       name: name,
       email: email,
-      id: roll,
       uuid: uuid,
       password: pswd,
     };
@@ -39,11 +37,11 @@ const Signup = () => {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-yellow-600 md:text-2xl">
-                Create a Student Account
+                Create an Organisation Account
               </h1>
               <p className="text-sm text-slate-200 text-center">
-                Are you an <span className="text-yellow-300">Instructor</span> ?
-                <Link href={"/signup/teacher"} className="font-bold">
+                Are you a <span className="text-yellow-300">student</span> ?
+                <Link href={"/signup"} className="font-bold">
                   {" "}
                   Click Here
                 </Link>
@@ -54,7 +52,7 @@ const Signup = () => {
                     htmlFor="name"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Your Name
+                    Institute Name
                   </label>
                   <input
                     type="text"
@@ -64,7 +62,7 @@ const Signup = () => {
                       setName(e.target.value);
                     }}
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="John Doe"
+                    placeholder="XX University"
                     required={true}
                   ></input>
                 </div>
@@ -73,7 +71,7 @@ const Signup = () => {
                     htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Your email
+                    Institute email
                   </label>
                   <input
                     type="email"
@@ -92,37 +90,21 @@ const Signup = () => {
                     htmlFor="roll"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >
-                    Your Roll Number
+                    Institute ID
                   </label>
                   <input
                     type="number"
                     name="roll"
                     id="roll"
                     onChange={(e) => {
-                      setRoll(e.target.value);
+                      setUuid(e.target.value);
                     }}
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="0000000"
                     required={true}
                   ></input>
                 </div>
-                <div>
-                  <label
-                    htmlFor="emuuidail"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Your University ID
-                  </label>
-                  <input
-                    type="text"
-                    name="uuid"
-                    id="uuid"
-                    onChange={(e) => [setUuid(e.target.value)]}
-                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="xxxxxxx"
-                    required={true}
-                  ></input>
-                </div>
+
                 <div>
                   <label
                     htmlFor="password"
@@ -150,7 +132,7 @@ const Signup = () => {
                     Confirm password
                   </label>
                   <input
-                    type="password"
+                    type="confirm-password"
                     name="confirm-password"
                     id="confirm-password"
                     onChange={(e) => {
@@ -187,7 +169,7 @@ const Signup = () => {
                   </div>
                 </div>
                 <button
-                  onClick={handleSubmit}
+                  type="submit"
                   className="w-full text-white bg-gray-500 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Create an account
@@ -211,4 +193,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default InstituteSignup;
