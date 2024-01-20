@@ -1,6 +1,12 @@
 import React from "react";
 
 const Classes = () => {
+  const classes = [
+    "Computer Science",
+    "Internet of Things",
+    "Embedded Sysytem",
+  ];
+  
   return (
     <main className="bg-gray-400 min-h-screen">
       <section className="px-44 py-20">
